@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
+import Page1 from './Page1';
+import Page2 from './Page2';
 import './index.css';
 
 // 检测是否在 Wujie 环境中运行
@@ -14,7 +17,15 @@ if (isWujieEnvironment) {
     const rootElement = document.getElementById('root');
     if (rootElement) {
       const root = ReactDOM.createRoot(rootElement);
-      root.render(<App />);
+      root.render(
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/page1" element={<Page1 />} />
+            <Route path="/page2" element={<Page2 />} />
+          </Routes>
+        </BrowserRouter>
+      );
     }
   };
   
@@ -33,7 +44,15 @@ if (isWujieEnvironment) {
 } else {
   // 非微前端环境，直接渲染
   const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-  root.render(<App />);
+  root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/page1" element={<Page1 />} />
+        <Route path="/page2" element={<Page2 />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 // 导出生命周期函数，确保wujie可以访问

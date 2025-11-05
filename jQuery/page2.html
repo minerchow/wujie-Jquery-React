@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery 父应用 - 微前端示例</title>
+    <title>jQuery 父应用 - Page 2</title>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <!-- 使用稳定版本的 wujie -->
     <script src="https://unpkg.com/wujie@1.0.29/lib/index.js"></script>
@@ -99,16 +99,35 @@
             color: #888;
             font-style: italic;
         }
+        .nav {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2196F3;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>jQuery 父应用</h1>
-            <p>这是一个使用 jQuery 构建的父应用，用于演示微前端架构</p>
+            <h1>jQuery 父应用 - Page 2</h1>
+            <p>这是一个使用 jQuery 构建的父应用，用于演示微前端架构 - 页面2</p>
         </div>
 
-        <!-- <div class="control-panel">
+        <div class="nav">
+            <a href="index.html">主页</a>
+            <a href="page1.html">页面1</a>
+            <a href="page2.html">页面2</a>
+        </div>
+
+        <div class="control-panel">
             <h3>子应用控制</h3>
             <button id="startBtn">启动子应用</button>
             <button id="stopBtn" disabled class="danger">停止子应用</button>
@@ -117,9 +136,9 @@
             <div class="status">
                 <strong>状态:</strong> <span id="status">等待初始化...</span>
             </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="control-panel">
+        <div class="control-panel">
             <h3>消息通信</h3>
             <div>
                 <input type="text" id="messageInput" placeholder="输入要发送给子应用的消息">
@@ -130,13 +149,13 @@
                 <h4>通信记录:</h4>
                 <ul id="messages"></ul>
             </div>
-        </div> -->
+        </div>
 
-        <!-- <div id="subAppContainer">
-            <div class="empty-container">子应用将加载到这里...</div>
-        </div> -->
+        <div id="subAppContainer">
+            <div class="empty-container">React 子应用 page2 将加载到这里...</div>
+        </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="page2.js"></script>
 </body>
 </html>
