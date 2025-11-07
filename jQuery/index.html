@@ -87,7 +87,7 @@
             border-radius: 4px;
             width: 300px;
         }
-        #subAppContainer {
+        #subAppContainer, #iframeContainer {
             margin-top: 20px;
             border: 2px dashed #ccc;
             padding: 20px;
@@ -132,9 +132,18 @@
             </div>
         </div> -->
 
-        <!-- <div id="subAppContainer">
-            <div class="empty-container">子应用将加载到这里...</div>
-        </div> -->
+        <!-- iframe 控制面板 -->
+        <div class="control-panel">
+            <h3>iframe 页面加载</h3>
+            <button id="loadPage1Btn">加载 Page1</button>
+            <button id="loadPage2Btn">加载 Page2</button>
+            <button id="clearIframeBtn" class="danger">清除 iframe</button>
+        </div>
+
+        <!-- iframe 容器 -->
+        <div id="iframeContainer">
+            <div class="empty-container">点击上方按钮加载页面...</div>
+        </div>
     </div>
 
     <script src="app.js"></script>

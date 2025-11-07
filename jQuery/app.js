@@ -285,4 +285,41 @@ $(document).ready(function() {
     
     // 初始化应用
     // initApp();
+    
+    // iframe 页面加载功能
+    function loadPageInIframe(pageUrl) {
+        // 清空容器
+        $('#iframeContainer').empty();
+        
+        // 创建iframe元素
+        const iframe = $('<iframe>', {
+            src: pageUrl,
+            width: '100%',
+            height: '500px',
+            frameborder: '0',
+            css: {
+                border: '1px solid #ddd',
+                borderRadius: '4px'
+            }
+        });
+        
+        // 添加到容器
+        $('#iframeContainer').append(iframe);
+    }
+    
+    // 清除iframe
+    function clearIframe() {
+        $('#iframeContainer').html('<div class="empty-container">点击上方按钮加载页面...</div>');
+    }
+    
+    // 绑定iframe按钮事件
+    $('#loadPage1Btn').click(() => {
+        loadPageInIframe('page1.html');
+    });
+    
+    $('#loadPage2Btn').click(() => {
+        loadPageInIframe('page2.html');
+    });
+    
+    $('#clearIframeBtn').click(clearIframe);
 });
